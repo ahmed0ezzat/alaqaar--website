@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-header white-bg custom-padding">
+    <div class="container-fluid custom-nav">
+        <a class="navbar-brand" routerLink='/home'>
+            <span class="logo-nav"></span>
+        </a>
+        <button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 right-tabs">
+                    <li (click)="navigateToVisits();isMenuCollapsed = true" class="nav-item right-tab" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}">
+                        <span class="visit-icon"></span>
+                        <a class="nav-link" routerLink='/visits'>{{'header.my_visits' | translate}}</a>
+                    </li>
+                    <li (click)="navigateToUnits();isMenuCollapsed = true" class="nav-item right-tab" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}">
+                        <span class="units-icon"></span>
+                        <a class="nav-link" routerLink='/units'>{{'header.my_units' | translate}} </a>
+                    </li>
+                    <li (click)="navigateToNotifications();isMenuCollapsed = true" class="nav-item right-tab" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                        true}">
+                        <i class="bage" *ngIf="haveNotifications">
+                            <span>.</span>
+                        </i>
+                        <span class="notifications-icon">
+                        </span>
+                        <a class="nav-link" routerLink='/notifications'>{{'header.Notifications' | translate}} </a>
+                    </li>
+                    <button *ngIf="!isLoggedIn" (click)="navigateToLogin()" type="button" class="btn btn-primary signup">
+                        <fa-icon [icon]="faUSer" class="user-icon"></fa-icon>
+                        {{'signIn.Login' | translate}}
+                    </button>
+                    <div ngbDropdown class="dropdown loggedin" *ngIf="isLoggedIn">
+                        <button ngbDropdownToggle class="btn btn-secondary dropdown-toggle loggedin-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img class="avatar" src="{{setAvatarUrl()}}" alt="..."/>
+                          <span class="rt-icon">
+                            <fa-icon [icon]="faEllipsisV"></fa-icon>
+                          </span>
+                        </button>
+                        <ul ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <li>
+                            <button (click)="navigateToEditProfile();isMenuCollapsed = true" class="dropdown-item" type="button"> <fa-icon [icon]="faEdit" class="user-icon"></fa-icon> {{'header.Profile.edit' | translate}}</button></li>
+                          <li><button (click)="navigateToFavorites();isMenuCollapsed = true" class="dropdown-item" type="button"><fa-icon [icon]="faHeart" class="user-icon"></fa-icon> {{'header.Profile.Favorites' | translate}}</button></li>
+                          <li><button (click)="showConfirmModel(content);isMenuCollapsed = true" class="dropdown-item" type="button"><fa-icon [icon]="faSignOutAlt" class="user-icon"></fa-icon> {{'header.Profile.logout' | translate}}</button></li>
+                        </ul>
+                      </div>
+                      <button *ngFor="let l of langList" (click)="selectedLang(l);isMenuCollapsed = true" class="btn me-2"
+                      type="button">{{l.title === 'AR' ? 'ع' : l.title}} </button>
+
+                </ul>
+              
+            </div>
+        </div>
+    </div>
+   
+</nav>
+
+<nav class="sub-nav white-bg custom-padding">
+    <div class="container-fluid custom-nav">
+        <div [ngbCollapse]="!isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    false}">
+                    <span class="top"></span>
+                    <a class="nav-link" routerLink='/home'>{{'header.tab_home' | translate}}</a>
+                    <span class="bottom"></span>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}">
+                    <span class="top"></span>
+                    <a class="nav-link" routerLink='/blog'>{{'header.blog' | translate}}</a>
+                    <span class="bottom"></span>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}">
+                    <span class="top"></span>
+                    <a class="nav-link" routerLink='/how-it-works'>{{'header.how it works' | translate}}</a>
+                    <span class="bottom"></span>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}">
+                    <span class="top"></span>
+                    <a class="nav-link" routerLink='/about'>{{'header.about_us' | translate}}</a>
+                    <span class="bottom"></span>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                    true}">
+                    <span class="top"></span>
+                    <a class="nav-link" routerLink='/contact'>{{'header.contact_us' | translate}}</a>
+                    <span class="bottom"></span>
+                </li>
+                </ul>
+        </div>
+
+    </div>
+    <ng-template #content let-c="close" let-d="dismiss">  
+        <div [class.rtl]="activeLang.title === 'AR'">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">{{'header.Profile.logout' | translate}}</h4>
+              </div>
+              <div class="modal-body">
+                <p><strong>{{'header.Profile.logout message' | translate}} </strong></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" (click)="c('cancel click')">{{'button.actions.cancel' | translate}}</button>
+                <button type="button" class="btn btn-danger" (click)="logout()">{{'header.Profile.logout' | translate}}</button>
+              </div>
+            
+        </div>
+    </ng-template>
+
+</nav>
