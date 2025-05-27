@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { ApiService } from '../../services/api.service'
 import { CookieService } from 'ngx-cookie-service';
@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
   registrationRequest: boolean = false
   invalidPTO: boolean = false
   isLoading: boolean = false
-  phoneForm = new FormGroup({
-    phone: new FormControl('', [Validators.required]),
-    name: new FormControl(''),
-    avatar: new FormControl(''),
+  phoneForm = new UntypedFormGroup({
+    phone: new UntypedFormControl('', [Validators.required]),
+    name: new UntypedFormControl(''),
+    avatar: new UntypedFormControl(''),
   });
   agreeTermsAndConditions: boolean = false
   filedata: any
