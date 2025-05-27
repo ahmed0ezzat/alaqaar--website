@@ -1,0 +1,45 @@
+// Utility classes and resets
+*:focus {
+    outline: none !important;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .d-flex {
+    display: flex !important;
+  }
+  .align-items-center {
+    align-items: center !important;
+  }
+  .justify-content-center {
+    justify-content: center !important;
+  }
+  .justify-content-between {
+    justify-content: space-between !important;
+  }
+  .flex-wrap {
+    flex-wrap: wrap !important;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase !important;
+  }
+  
+  .shadow {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  

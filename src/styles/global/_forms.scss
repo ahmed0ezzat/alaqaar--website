@@ -1,0 +1,87 @@
+// Form input styles
+input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+  
+  input:disabled, select:disabled, textarea:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .rtl {
+    .search-sec {
+      border-top-left-radius: 20px !important;
+      border-bottom-left-radius: 20px !important;
+      border-bottom-right-radius: 20px !important;
+  
+      .ngSelect {
+        .faSearch {
+          right: auto !important;
+          left: 20px !important;
+        }
+        .search-input {
+          left: 10px !important;
+          right: auto !important;
+        }
+      }
+    }
+  
+    .form-stepper {
+      .bordered {
+        border-left: 1px solid #eee;
+        border-right: none;
+      }
+    }
+  
+    .contactus {
+      .contactForm {
+        border-right: unset !important;
+        padding-right: unset !important;
+        border-left: 1px solid #eee;
+        padding-left: 20px !important;
+  
+        .input-group-text {
+          border-radius: 10px;
+          border-top-right-radius: 10px !important;
+          border-bottom-right-radius: 10px !important;
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+  
+        input.form-control {
+          border-top-left-radius: 10px !important;
+          border-bottom-left-radius: 10px !important;
+          border-top-right-radius: 0 !important;
+          border-bottom-right-radius: 0 !important;
+          border-left: 1px solid #A9A9A9 !important;
+          border-right: unset !important;
+        }
+      }
+    }
+  
+    .ng-dropdown-panel {
+      right: 0;
+      left: unset !important;
+    }
+  }
+  
+  

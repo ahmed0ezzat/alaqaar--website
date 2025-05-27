@@ -1,0 +1,14 @@
+.rtl {
+    .buyer-tenant, .sell-landlord {
+      .main-title {
+        float: left !important;
+      }
+      .text-col {
+        p {
+          padding-right: 45px !important;
+          padding-left: unset !important;
+        }
+      }
+    }
+  }
+  

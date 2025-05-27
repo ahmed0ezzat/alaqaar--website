@@ -1,0 +1,36 @@
+.rtl {
+    .carousel-item {
+      float: left;
+      margin-right: -100%;
+      margin-left: unset;
+    }
+  
+    .carousel-control-prev {
+      left: 0;
+      right: unset;
+    }
+  
+    .carousel {
+      .switcher {
+        right: 15px;
+        left: unset !important;
+  
+        .form-select {
+          min-width: 170px !important;
+          padding-right: 40px !important;
+          padding-left: unset !important;
+        }
+  
+        .count {
+          right: 184px !important;
+          left: unset !important;
+        }
+  
+        .img-icon {
+          right: 10px !important;
+          left: unset !important;
+        }
+      }
+    }
+  }
+  

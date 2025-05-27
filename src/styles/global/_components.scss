@@ -1,0 +1,32 @@
+.rtl {
+    .button-success {
+      color: #fff;
+      border: none;
+      &:hover {
+        color: #fff;
+        opacity: 0.9;
+      }
+    }
+  
+    .add-property {
+      background: #fff !important;
+      color: #ff725f !important;
+      border: 1px solid #FF725F !important;
+      border-radius: 5px !important;
+      &:hover {
+        opacity: 0.9 !important;
+      }
+    }
+  
+    .modal-header {
+      float: right !important;
+      display: block !important;
+      text-align: right !important;
+      width: 100% !important;
+    }
+  
+    .modal-body {
+      text-align: right !important;
+    }
+  }
+  

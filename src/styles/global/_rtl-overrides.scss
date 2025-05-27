@@ -1,0 +1,81 @@
+.rtl {
+    .property-details {
+      .main-row .details .more-details .box .icon {
+        margin-left: auto !important;
+        margin-right: 13px !important;
+      }
+    }
+  
+    .recently-added,
+    .results {
+      .bage {
+        left: auto;
+        right: 10px;
+      }
+      .fav {
+        right: unset !important;
+        left: 20px;
+      }
+    }
+  
+    .results {
+      .result-head {
+        .form-select {
+          padding-right: 50px;
+          padding-left: unset !important;
+        }
+        fa-icon {
+          position: absolute;
+          top: 12px;
+          left: unset !important;
+          right: 34px;
+        }
+      }
+    }
+  
+    .login {
+      .login-area {
+        .login-container {
+          .login-sec {
+            left: -240px;
+            right: unset !important;
+            @media (max-width: 768px) {
+              position: relative;
+              width: auto;
+              left: auto;
+              margin: 35px 40px 170px 40px;
+            }
+            @media (max-width: 425px) {
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  
+    .iti__flag-container {
+      right: 0 !important;
+      left: auto !important;
+    }
+  
+    .dropdown-menu.show {
+      right: 0 !important;
+    }
+  
+    .iti.separate-dial-code input {
+      text-align: right;
+      padding-right: 98px;
+    }
+  
+    .carousel-control-prev {
+      left: 0;
+      right: unset;
+    }
+  
+    .iti__dial-code {
+      padding-right: 7px !important;
+      padding-left: unset !important;
+    }
+  }
+  

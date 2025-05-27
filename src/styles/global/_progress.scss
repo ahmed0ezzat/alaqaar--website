@@ -1,0 +1,34 @@
+.rtl {
+    .main-content {
+      .progress-bars {
+        .active {
+          img {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+  
+    .progress {
+      background-color: #00AF5E !important;
+      height: 8px;
+      border-radius: 10px;
+      opacity: 0.3;
+      margin-top: 5px;
+  
+      .one {
+        margin: 5px;
+        background-color: #00AF5E !important;
+      }
+      .two {
+        background-color: #FFA500 !important;
+      }
+      .three {
+        background-color: #FF725F !important;
+      }
+      .four {
+        background-color: #FF0000 !important;
+      }
+    }
+  }
+  
