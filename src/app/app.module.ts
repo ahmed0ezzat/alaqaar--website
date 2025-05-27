@@ -11,7 +11,7 @@ import { reducers, metaReducers } from './store/reducers/post.reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { environment } from '../environments/environment'
 import { PostEffect } from './store/effects/app.effects'
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { HttpClient, HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { PostService } from './services/post.service'
 import { AppServiceService } from './services/app-service.service'
 
@@ -68,84 +68,76 @@ import { NavigationEnd, Router } from '@angular/router';
 
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MyVisitsComponent,
-    MyUnitsComponent,
-    BlogComponent,
-    AboutUsComponent,
-    ContactUsComponent,
-    HomeComponent,
-    OopsComponent,
-    LoginComponent,
-    ResultsComponent,
-    PropertyDetailsComponent,
-    SetPrioritesComponent,
-    SetupBuyerPrioritiesComponent,
-    FormTemplateComponent,
-    SellFormTemplateComponent,
-    SingleBlogComponent,
-    NotificationsComponent,
-    SetupSellerPrioritiesComponent,
-    PhotosUploaderComponent,
-    SinglePropertyComponent,
-    HowItWorksComponent,
-    ForBuyerTenantComponent,
-    ForSellerLandlordComponent,
-    EditProfileComponent,
-    BuyerUnitDetailsComponent,
-    UnitDetailsComponent,
-    TermsAndConditionsComponent,
-    PrivacyPolicyComponent,
-    FavouritesComponent
-  ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    NgSelectModule,
-    FontAwesomeModule,
-    ToastModule.forRoot(),
-    WavesModule,
-    NzProgressModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    EffectsModule.forRoot([PostEffect]),
-    StoreModule.forRoot(reducers, {
-      metaReducers, 
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true,
-      }
-    }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
-    NgbModule,
-    NgxIntlTelInputModule,
-    NgOtpInputModule,
-    CdkStepperModule,
-    NgStepperModule,
-    NgxNumberFormatModule,
-    NgxSpinnerModule
-  ],
-  providers: [PostService, AppServiceService,CookieService, {
-    provide : HTTP_INTERCEPTORS,
-    useClass: HttpInterceptorInterceptor,
-    multi   : true,
-  },
-],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        MyVisitsComponent,
+        MyUnitsComponent,
+        BlogComponent,
+        AboutUsComponent,
+        ContactUsComponent,
+        HomeComponent,
+        OopsComponent,
+        LoginComponent,
+        ResultsComponent,
+        PropertyDetailsComponent,
+        SetPrioritesComponent,
+        SetupBuyerPrioritiesComponent,
+        FormTemplateComponent,
+        SellFormTemplateComponent,
+        SingleBlogComponent,
+        NotificationsComponent,
+        SetupSellerPrioritiesComponent,
+        PhotosUploaderComponent,
+        SinglePropertyComponent,
+        HowItWorksComponent,
+        ForBuyerTenantComponent,
+        ForSellerLandlordComponent,
+        EditProfileComponent,
+        BuyerUnitDetailsComponent,
+        UnitDetailsComponent,
+        TermsAndConditionsComponent,
+        PrivacyPolicyComponent,
+        FavouritesComponent
+    ],
+    bootstrap: [AppComponent], imports: [FormsModule,
+        ReactiveFormsModule,
+        NgSelectModule,
+        FontAwesomeModule,
+        ToastModule.forRoot(),
+        WavesModule,
+        NzProgressModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        AppRoutingModule,
+        EffectsModule.forRoot([PostEffect]),
+        StoreModule.forRoot(reducers, {
+            metaReducers,
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true,
+            }
+        }),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpTranslateLoader,
+                deps: [HttpClient]
+            }
+        }),
+        NgbModule,
+        NgxIntlTelInputModule,
+        NgOtpInputModule,
+        CdkStepperModule,
+        NgStepperModule,
+        NgxNumberFormatModule,
+        NgxSpinnerModule], providers: [PostService, AppServiceService, CookieService, {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpInterceptorInterceptor,
+            multi: true,
+        }, provideHttpClient(withInterceptorsFromDi()),] })
 export class AppModule { 
   constructor(library: FaIconLibrary,private router: Router) {
     // library.addIconPacks(fas)
