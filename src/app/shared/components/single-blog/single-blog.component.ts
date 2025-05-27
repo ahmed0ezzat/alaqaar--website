@@ -9,9 +9,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AppServiceService } from '../../../services/app-service.service';
 
 @Component({
-  selector: 'app-single-blog',
-  templateUrl: './single-blog.component.html',
-  styleUrls: ['./single-blog.component.scss']
+    selector: 'app-single-blog',
+    templateUrl: './single-blog.component.html',
+    styleUrls: ['./single-blog.component.scss'],
+    standalone: false
 })
 export class SingleBlogComponent implements OnInit {
   faWhatsappSquare = faWhatsapp

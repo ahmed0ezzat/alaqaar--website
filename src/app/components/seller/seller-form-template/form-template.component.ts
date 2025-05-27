@@ -11,9 +11,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'sell-form-template',
-  templateUrl: './form-template.component.html',
-  styleUrls: ['./form-template.component.scss']
+    selector: 'sell-form-template',
+    templateUrl: './form-template.component.html',
+    styleUrls: ['./form-template.component.scss'],
+    standalone: false
 })
 export class SellFormTemplateComponent implements OnInit {
   @ViewChild('file') file!: ElementRef

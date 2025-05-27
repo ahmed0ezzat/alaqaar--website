@@ -14,9 +14,10 @@ import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
-  selector: 'app-my-units',
-  templateUrl: './my-units.component.html',
-  styleUrls: ['./my-units.component.scss']
+    selector: 'app-my-units',
+    templateUrl: './my-units.component.html',
+    styleUrls: ['./my-units.component.scss'],
+    standalone: false
 })
 export class MyUnitsComponent implements OnInit {
   view: string = 'list' //grid / list

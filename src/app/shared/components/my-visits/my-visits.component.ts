@@ -10,9 +10,10 @@ import { environment } from 'src/environments/environment';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-my-visits',
-  templateUrl: './my-visits.component.html',
-  styleUrls: ['./my-visits.component.scss']
+    selector: 'app-my-visits',
+    templateUrl: './my-visits.component.html',
+    styleUrls: ['./my-visits.component.scss'],
+    standalone: false
 })
 export class MyVisitsComponent implements OnInit {
   view: string = 'list' //grid / list

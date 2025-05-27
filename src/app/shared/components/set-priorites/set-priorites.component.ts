@@ -11,9 +11,10 @@ import { faTimes, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg
 
 
 @Component({
-  selector: 'app-set-priorites',
-  templateUrl: './set-priorites.component.html',
-  styleUrls: ['./set-priorites.component.scss']
+    selector: 'app-set-priorites',
+    templateUrl: './set-priorites.component.html',
+    styleUrls: ['./set-priorites.component.scss'],
+    standalone: false
 })
 export class SetPrioritesComponent implements OnInit {
   @ViewChild('myaccordion', { static: true })

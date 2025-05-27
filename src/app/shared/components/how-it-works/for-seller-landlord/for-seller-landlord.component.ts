@@ -3,9 +3,10 @@ import { Subscription } from 'rxjs';
 import { AppServiceService } from 'src/app/services/app-service.service';
 
 @Component({
-  selector: 'app-for-seller-landlord',
-  templateUrl: './for-seller-landlord.component.html',
-  styleUrls: ['./for-seller-landlord.component.scss']
+    selector: 'app-for-seller-landlord',
+    templateUrl: './for-seller-landlord.component.html',
+    styleUrls: ['./for-seller-landlord.component.scss'],
+    standalone: false
 })
 export class ForSellerLandlordComponent implements OnInit {
   sub = new Subscription()

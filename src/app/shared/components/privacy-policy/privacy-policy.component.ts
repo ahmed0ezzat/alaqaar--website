@@ -5,9 +5,10 @@ import { Subscription } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-privacy-policy',
-  templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss']
+    selector: 'app-privacy-policy',
+    templateUrl: './privacy-policy.component.html',
+    styleUrls: ['./privacy-policy.component.scss'],
+    standalone: false
 })
 export class PrivacyPolicyComponent implements OnInit {
   privacy: any = {}

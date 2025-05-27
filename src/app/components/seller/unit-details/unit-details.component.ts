@@ -17,9 +17,10 @@ import { TranslateService } from '@ngx-translate/core';
 import 'bootstrap';
 
 @Component({
-  selector: 'app-unit-details',
-  templateUrl: './unit-details.component.html',
-  styleUrls: ['./unit-details.component.scss']
+    selector: 'app-unit-details',
+    templateUrl: './unit-details.component.html',
+    styleUrls: ['./unit-details.component.scss'],
+    standalone: false
 })
 export class UnitDetailsComponent implements OnInit {
   faAngleLeft = faAngleLeft

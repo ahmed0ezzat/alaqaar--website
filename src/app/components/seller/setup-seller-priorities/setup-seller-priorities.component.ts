@@ -14,9 +14,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { faTimes, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-setup-seller-priorities',
-  templateUrl: './setup-seller-priorities.component.html',
-  styleUrls: ['./setup-seller-priorities.component.scss']
+    selector: 'app-setup-seller-priorities',
+    templateUrl: './setup-seller-priorities.component.html',
+    styleUrls: ['./setup-seller-priorities.component.scss'],
+    standalone: false
 })
 export class SetupSellerPrioritiesComponent implements OnInit {
   @ViewChild('myaccordion', { static: true })

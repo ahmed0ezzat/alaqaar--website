@@ -18,9 +18,10 @@ import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
-  selector: 'app-setup-buyer-priorities',
-  templateUrl: './setup-buyer-priorities.component.html',
-  styleUrls: ['./setup-buyer-priorities.component.scss']
+    selector: 'app-setup-buyer-priorities',
+    templateUrl: './setup-buyer-priorities.component.html',
+    styleUrls: ['./setup-buyer-priorities.component.scss'],
+    standalone: false
 })
 export class SetupBuyerPrioritiesComponent implements OnInit {
 

@@ -20,9 +20,10 @@ export interface ComponentCanDeactivate {
   canDeactivate: () => boolean | Observable<boolean>;
 }
 @Component({
-  selector: 'app-property-details',
-  templateUrl: './property-details.component.html',
-  styleUrls: ['./property-details.component.scss']
+    selector: 'app-property-details',
+    templateUrl: './property-details.component.html',
+    styleUrls: ['./property-details.component.scss'],
+    standalone: false
 })
 
 export class PropertyDetailsComponent implements OnInit {

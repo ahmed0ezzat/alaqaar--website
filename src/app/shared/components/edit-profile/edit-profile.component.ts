@@ -10,9 +10,10 @@ import { NotificationsService } from 'src/app/services/notifications.service';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-edit-profile',
-  templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.scss']
+    selector: 'app-edit-profile',
+    templateUrl: './edit-profile.component.html',
+    styleUrls: ['./edit-profile.component.scss'],
+    standalone: false
 })
 export class EditProfileComponent implements OnInit {
   phoneForm = new UntypedFormGroup({

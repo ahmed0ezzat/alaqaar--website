@@ -10,9 +10,10 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-favourites',
-  templateUrl: './favourites.component.html',
-  styleUrls: ['./favourites.component.scss']
+    selector: 'app-favourites',
+    templateUrl: './favourites.component.html',
+    styleUrls: ['./favourites.component.scss'],
+    standalone: false
 })
 export class FavouritesComponent implements OnInit {
   loadMore: boolean = false

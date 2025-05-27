@@ -7,9 +7,10 @@ import * as util from '../../../../utils/index'
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-form-template',
-  templateUrl: './form-template.component.html',
-  styleUrls: ['./form-template.component.scss']
+    selector: 'app-form-template',
+    templateUrl: './form-template.component.html',
+    styleUrls: ['./form-template.component.scss'],
+    standalone: false
 })
 export class FormTemplateComponent implements OnInit {
   public stepForm!: UntypedFormGroup;

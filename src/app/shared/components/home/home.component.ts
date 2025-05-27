@@ -13,9 +13,10 @@ import { Title, Meta } from '@angular/platform-browser'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   @ViewChild('minPrice') minPrice!: ElementRef

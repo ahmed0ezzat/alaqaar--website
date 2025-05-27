@@ -12,9 +12,10 @@ import { environment } from 'src/environments/environment'
 import { TranslateService } from '@ngx-translate/core'
 import 'bootstrap';
 @Component({
-  selector: 'app-single-property',
-  templateUrl: './single-property.component.html',
-  styleUrls: ['./single-property.component.scss']
+    selector: 'app-single-property',
+    templateUrl: './single-property.component.html',
+    styleUrls: ['./single-property.component.scss'],
+    standalone: false
 })
 export class SinglePropertyComponent implements OnInit {
   faAngleLeft = faAngleLeft

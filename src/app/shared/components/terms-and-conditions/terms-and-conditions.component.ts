@@ -5,9 +5,10 @@ import { Subscription } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-terms-and-conditions',
-  templateUrl: './terms-and-conditions.component.html',
-  styleUrls: ['./terms-and-conditions.component.scss']
+    selector: 'app-terms-and-conditions',
+    templateUrl: './terms-and-conditions.component.html',
+    styleUrls: ['./terms-and-conditions.component.scss'],
+    standalone: false
 })
 export class TermsAndConditionsComponent implements OnInit {
   terms: any = {}
